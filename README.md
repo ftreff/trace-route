@@ -40,7 +40,7 @@ sudo apt install traceroute
 ```bash
 python trace.py
 ```
-Then open http://localhost:5001/static/trace.html
+Then open http://localhost:5001
 
 ## 🛠 API Endpoint
 GET /api/trace?ip=1.1.1.1
