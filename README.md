@@ -21,8 +21,8 @@
 trace/ 
 ├── static/ 
 │     ├── trace.html # Main UI: map + CLI 
-│     ├── trace.js # Frontend logic: traceroute + map 
-├── trace.py # Flask backend: /api/trace
+│     └── trace.js # Frontend logic: traceroute + map 
+└── trace.py # Flask backend: /api/trace
 ```
 
 ## 🚀 Getting Started
