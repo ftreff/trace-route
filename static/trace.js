@@ -5,8 +5,8 @@ let hopLines = [];
 function initMap() {
   map = L.map("map").setView([42.6526, -73.7562], 3); // Albany, NY
 
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: "&copy; OpenStreetMap contributors",
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+    attribution: "&copy; OpenStreetMap contributors & CartoDB",
   }).addTo(map);
 }
 
@@ -63,7 +63,7 @@ function runTrace(ip) {
 
           const marker = L.circleMarker(latlng, {
             radius: 6,
-            fillColor: "#00ff00",
+            fillColor: "#00ff88",
             color: "#000",
             weight: 1,
             opacity: 1,
@@ -86,7 +86,7 @@ function runTrace(ip) {
 
           if (prevLatLng) {
             const line = L.polyline([prevLatLng, latlng], {
-              color: "#00ff00",
+              color: "#00ff88",
               weight: 2,
               opacity: 0.7
             }).addTo(map);
