@@ -1,9 +1,17 @@
 import subprocess
 import socket
 import requests
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static")
+
+@app.route("/")
+def root():
+    return send_from_directory("static", "trace.html")
+
+@app.route("/<path:path>")
+def static_files(path):
+    return send_from_directory("static", path)
 
 def run_traceroute(ip):
     try:
