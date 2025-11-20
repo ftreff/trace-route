@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Net Sentinel Trace</title>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: monospace;
+      background: black;
+      color: #00ff00;
+    }
+
+    #map {
+      height: 75%;
+      width: 100%;
+    }
+
+    #terminal {
+      height: 25%;
+      width: 100%;
+      background: black;
+      color: #00ff00;
+      padding: 10px;
+      overflow-y: auto;
+      box-sizing: border-box;
+      border-top: 1px solid #00ff00;
+    }
+
+    #inputLine {
+      display: flex;
+      align-items: center;
+    }
+
+    #inputLine span {
+      margin-right: 5px;
+    }
+
+    #ipInput {
+      background: black;
+      color: #00ff00;
+      border: none;
+      outline: none;
+      flex: 1;
+      font-family: monospace;
+      font-size: 1em;
+    }
+
+    .hop-line {
+      color: #00ff00;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <div id="terminal">
+    <div id="output"></div>
+    <div id="inputLine">
+      <span>enter ip address:</span>
+      <input type="text" id="ipInput" autocomplete="off" />
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="trace.js"></script>
+</body>
+</html>
