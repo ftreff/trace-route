@@ -17,16 +17,18 @@ def run_traceroute(ip):
                 continue
 
             hop_ip = None
-            rtt = None
+            rtt_values = []
 
             for part in parts[1:]:
-                if part.count('.') == 3:
+                if part.count('.') == 3 and not hop_ip:
                     hop_ip = part
                 elif "ms" in part:
                     try:
-                        rtt = float(part.replace("ms", ""))
+                        rtt_values.append(float(part.replace("ms", "")))
                     except:
                         pass
+
+            rtt = round(sum(rtt_values) / len(rtt_values), 2) if rtt_values else None
 
             if hop_ip:
                 hops.append({
